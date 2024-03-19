@@ -1,20 +1,43 @@
-<h1> Listagem de suportes</h1>
-<a href="{{  route('supports.create') }}">Pergunta ao suporte técnico</a>
+<!DOCTYPE html>
+<html>
 
-<table>
-    <thead>
-        <th>Assunto</th>
-        <th>status</th>
-        <th>descrição</th>
-        <th></th>
-    </thead>
-    <tbody>
-        @foreach ($supports as $support)
+<head>
+    <meta charset="UTF-8" />
+</head>
+
+<body>
+
+    <h1>Listagem de suportes</h1>
+    <a href="{{ route('supports.create') }}">Criar Chamado</a>
+
+    <table>
+        <thead>
             <tr>
-                <td>{{ support->subject }}</td>
-                <td>{{ support->status }}</td>
-                <td>{{ support->body }}</td>
+
+                <th>Assunto</th>
+                <th>Descrição</th>
+                <th>Status</th>
+                <hr>
+                <th>id</th>
             </tr>
-        @endforeach
-    </tbody>
-</table
+        </thead>
+        <tbody>
+            @foreach ($supports as $support)
+                <tr>
+
+                    <td>{{ $support->subject }}</td>
+                    <td>{{ $support->body }}</td>
+                    <td style="color:green">{{ $support->status }}</td>
+                    <td>{{ $support->id }}</td>
+                    <td>
+                        <a href="{{ route('supports.show', $support->id) }}"> Verificar</a>
+                    </td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
+    
+
+</body>
+
+</html>
