@@ -5,20 +5,21 @@ namespace App\Services;
 use App\DTO\CreateSupportDTO;
 use App\DTO\UpdateSupportDTO;
 use PhpParser\Node\Expr\Cast\String_;
+use App\Repositories\SupportRepositoryInterface;
 use stdClass;
 
 class SupportService
 {
-    protected $repository;
-
-    public function __construct() {}
+    public function __construct(
+        protected SupportRepositoryInterface $repository,
+    ) {}
 
     public function getAll(string $filter = null): array
     {
         return $this->repository->getAll($filter);
     }
 
-    public  function findOne(string $id): stdClass|null
+    public  function findOne(string $id): stdClass | null
     {
         return $this->repository->findOne($id);
     }
@@ -30,7 +31,7 @@ class SupportService
         );
     }
 
-    public function update(UpdateSupportDTO $dto): stdClass
+    public function update(UpdateSupportDTO $dto): stdClass | null
     {
         return $this->repository->update(
             $dto
