@@ -2,6 +2,8 @@
 
 namespace App\Services;
 
+use App\DTO\CreateSupportDTO;
+use App\DTO\UpdateSupportDTO;
 use PhpParser\Node\Expr\Cast\String_;
 use stdClass;
 
@@ -21,17 +23,17 @@ class SupportService
         return $this->repository->findOne($id);
     }
 
-    public function update(
-        string $id,
-        string $subject,
-        string $status,
-        string $body,
-    ): stdClass {
+    public function new(CreateSupportDTO $dto): stdClass
+    {
+        return $this->repository->new(
+            $dto
+        );
+    }
+
+    public function update(UpdateSupportDTO $dto): stdClass
+    {
         return $this->repository->update(
-            $id,
-            $subject,
-            $status,
-            $body,
+            $dto
         );
     }
 
