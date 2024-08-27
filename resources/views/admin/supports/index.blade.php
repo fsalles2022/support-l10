@@ -25,19 +25,19 @@
             @foreach ($supports as $support)
                 <tr>
 
-                    <td style="color:blue;">{{ $support->subject }}-</td>
-                    <td style="color:red;">{{ $support->body }}</td>
-                    <td style="color:green;">{{ $support->status }}-</td>
-                    <td>{{ $support->id }}</td>
+                    <td style="color:blue;">{{ $support['subject'] }}-</td>
+                    <td style="color:red;">{{ $support['body'] }}</td>
+                    <td style="color:green;">{{ $support['status'] }}-</td>
+                    <td>{{ $support['id'] }}</td>
                     <td>
-                        <a href="{{ route('supports.show', $support->id) }}"> Verificar</a>
-                        <a href="{{ route('supports.edit', $support->id) }}"> Editar</a>
+                        <a href="{{ route('supports.show', $support['id']) }}"> Verificar</a>
+                        <a href="{{ route('supports.edit', $support['id']) }}"> Editar</a>
                     </td>
                 </tr>
             @endforeach
         </tbody>
     </table>
-    
+
 
 </body>
 
