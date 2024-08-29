@@ -4,7 +4,9 @@ namespace App\Repositories;
 
 interface PaginationInterface
 {
-    // @return StdClass[]
+    /**
+     * @return stdClass[]
+     */
 
     public function items(): array;
     public function total(): int;

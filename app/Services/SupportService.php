@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\DTO\CreateSupportDTO;
 use App\DTO\UpdateSupportDTO;
+use App\Repositories\PaginationInterface;
 use PhpParser\Node\Expr\Cast\String_;
 use App\Repositories\SupportRepositoryInterface;
 use stdClass;
@@ -19,7 +20,7 @@ class SupportService
         int $totalPerPage = 15,
         string $filter = null
 
-    ) {
+    ): PaginationInterface {
         return $this->repository->paginate(
             page: $page,
             totalPerPage: $totalPerPage,

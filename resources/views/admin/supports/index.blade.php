@@ -7,7 +7,7 @@
 
 <body>
 
-    <h1>Listagem de suportes</h1>
+    <h1>Listagem de chamados</h1>
     <a href="{{ route('supports.create') }}">Criar Chamado</a>
 
     <table>
@@ -22,22 +22,23 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($supports as $support)
+            @foreach ($supports->items() as $support)
                 <tr>
 
-                    <td style="color:blue;">{{ $support['subject'] }}-</td>
-                    <td style="color:red;">{{ $support['body'] }}</td>
-                    <td style="color:green;">{{ $support['status'] }}-</td>
-                    <td>{{ $support['id'] }}</td>
+                    <td style="color:blue;">{{ $support->subject }}-</td>
+                    <td style="color:red;">{{ $support->status }}--</td>
+                    <td style="color:green;">{{ $support->body }}-</td>
+                    <td>{{ $support->id }}</td>
                     <td>
-                        <a href="{{ route('supports.show', $support['id']) }}"> Verificar</a>
-                        <a href="{{ route('supports.edit', $support['id']) }}"> Editar</a>
+                        <a href="{{ route('supports.show', $support->id) }}"> Verificar</a>
+                        <a href="{{ route('supports.edit', $support->id) }}"> Editar</a>
                     </td>
                 </tr>
             @endforeach
         </tbody>
     </table>
 
+    <x-pagination :paginator="$supports" :appends="$filters" />
 
 </body>
 
