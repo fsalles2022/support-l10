@@ -26,8 +26,8 @@
                 <tr>
 
                     <td style="color:blue;">{{ $support->subject }}-</td>
-                    <td style="color:red;">{{ $support->status }}--</td>
-                    <td style="color:green;">{{ $support->body }}-</td>
+                    <td style="color:rgb(52, 173, 19);">{{ $support->body }}--</td>
+                    <td style="color:green;">{{ $support->status }}-</td>
                     <td>{{ $support->id }}</td>
                     <td>
                         <a href="{{ route('supports.show', $support->id) }}"> Verificar</a>
