@@ -1,11 +1,14 @@
-<h1>Nos informe no que podemos ajudar?{{ $support->id }}</h1>
+@extends('admin.layouts.app')
+@section('title', 'Suporte')
 
-<x-alert />
+@section('nav')
+    @include('admin.supports.partials.nav')
+@endsection<h1>Nos informe no que podemos ajudar?</h1>
 
-<form action="{{ route('supports.update', $support->id) }}" method="POST">
-    @method('PUT')
-    @include('admin.supports.partials.form', [
-        'support' => $support,
-    ])
-</form>
-<a href="{{ route('supports.index') }}">Cancelar</a>
+@section('content')
+    @include('admin.supports.partials.form_edit')
+@endsection
+
+@section('content-footer')
+    @include('admin.supports.partials.footer')
+@endsection

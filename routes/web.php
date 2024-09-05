@@ -1,11 +1,14 @@
 <?php
 
+use App\Enums\SupportStatus;
 use App\Http\Controllers\Admin\{SupportController};
 use App\Http\Controllers\Site\ContactController;
 use Illuminate\Support\Facades\Route;
 
+// Route::get('/teste', function () {});
+// dd(array_column(SupportStatus::cases(), 'name'));
 
-route::delete('/supports/{id}', [SupportController::class, 'destroy'])->name('supports.destroy');
+Route::delete('/supports/{id}', [SupportController::class, 'destroy'])->name('supports.destroy');
 
 Route::put('/supports/{id}', [SupportController::class, 'update'])->name('supports.update');
 
