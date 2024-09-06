@@ -72,3 +72,29 @@ li {
 
     background-color: #28323C !important;
 }
+
+.underline {
+    text-decoration: underline;
+}
+
+/* Estilos gerais para textarea */
+textarea.form-control {
+    width: 100%;
+    /* Faz o textarea preencher o contêiner pai */
+    box-sizing: border-box;
+    /* Inclui padding e bordas na largura total */
+    padding: 8px;
+    /* Ajusta o padding interno */
+    margin: 0;
+    /* Remove margens externas se necessário */
+    overflow: auto;
+    /* Adiciona barras de rolagem se o conteúdo ultrapassar */
+}
+
+/* Estilos para o contêiner do textarea */
+.mb-3 {
+    margin-bottom: 1rem;
+    /* Ajuste a margem inferior conforme necessário */
+    width: 100%;
+    /* Garante que o contêiner ocupa a largura total disponível */
+}
