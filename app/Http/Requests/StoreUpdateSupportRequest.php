@@ -22,25 +22,34 @@ class StoreUpdateSupportRequest extends FormRequest
      */
     public function rules(): array
     {
-        return  $rules = [
-            // 'subject' => 'required|min:3|max:255|unique:supports',
+        $rules = [
             'subject' => 'required|min:3|max:255',
-            'body'    => [
-                'required',
-                'min:3',
-                'max:100000',
-            ],
+            'body'    => 'required|min:3|max:100000',
         ];
 
-        if ($this->method() === 'PUT') {
+        if ($this->isMethod('put')) {
+            // Ajuste para PUT
             $rules['subject'] = [
                 'required',
                 'min:3',
-                'max:100000',
-                // 'unique:supports,subject,{$this->id},id',
-                Rule::unique('supports')->ignore($this->id),
-
+                'max:255',
+                Rule::unique('supports')->ignore($this->route('support')),
             ];
         }
+
+        return $rules;
+    }
+
+    public function messages(): array
+    {
+        return [
+            'subject.required' => 'O campo assunto é obrigatório.',
+            'body.required'    => 'O campo corpo é obrigatório.',
+            'subject.min'      => 'O campo assunto deve ter no mínimo :min caracteres.',
+            'subject.max'      => 'O campo assunto deve ter no máximo :max caracteres.',
+            'body.min'         => 'O campo corpo deve ter no mínimo :min caracteres.',
+            'body.max'         => 'O campo corpo deve ter no máximo :max caracteres.',
+            'subject.unique'   => 'O campo assunto já está em uso.',
+        ];
     }
 }
