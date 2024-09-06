@@ -1,9 +1,19 @@
-<aside <x-alert />
+<div class="container">
+    <!-- Exibe o ID do chamado -->
+    <div class="mx-4">
+        <h3 class="text-center text-white underline">
+            CHAMADO ID: {{ $support->id }}
+        </h3>
 
-<form action="{{ route('supports.update', $support->id) }}" method="POST">
-    @method('PUT')
-    @include('admin.supports.partials.form', [
-        'support' => $support,
-    ])
-</form>ID do chamado: {{ $support->id }}</br>
-<a href="{{ route('supports.index') }}">Cancelar</a>
+        <x-alert />
+
+
+        <form action="{{ route('supports.update', $support->id) }}" method="POST">
+            @csrf
+            @method('PUT')
+
+            <!-- Inclui o formulário parcial -->
+            @include('admin.supports.partials.form', ['support' => $support])
+        </form>
+    </div>
+</div>
