@@ -18,15 +18,21 @@ class SupportController extends Controller
 
     public function index(Request $request)
     {
+        // Obtém os dados paginados com base no filtro e parâmetros fornecidos
         $supports = $this->supportService->paginate(
             page: $request->get('page', 1),
             totalPerPage: $request->get('per_page', 5),
-            filter: $request->filter,
+            filter: $request->filter
         );
 
+        // Verifica se não há itens e se um filtro foi aplicado
+        $noResults = $supports->total() === 0 && $request->filter;
+
+        // Prepara os filtros para a view
         $filters = ['filter' => $request->get('filter', '')];
 
-        return view('admin.supports.index', compact('supports', 'filters'));
+        // Retorna a view com os dados paginados, os filtros e a variável de status
+        return view('admin.supports.index', compact('supports', 'filters', 'noResults'));
     }
 
     public function show(string|int $id)
@@ -50,7 +56,8 @@ class SupportController extends Controller
             CreateSupportDTO::makeFromRequest($request)
         );
 
-        return redirect()->route('supports.index');
+        return redirect()->route('supports.index')
+            ->with('message', 'Cadastrado com Sucesso!');
     }
 
     public function edit(string $id)
@@ -72,13 +79,16 @@ class SupportController extends Controller
             return back();
         }
 
-        return redirect()->route('supports.index');
+        return redirect()->route('supports.index')
+            ->with('message', 'Atualizado com Sucesso!');
     }
 
     public function destroy(int $id)
     {
         $this->supportService->delete($id);
 
-        return redirect()->route('supports.index');
+        return redirect()
+            ->route('supports.index')
+            ->with('message', 'Chamado Deletado com Sucesso!');
     }
 }

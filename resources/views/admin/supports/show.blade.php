@@ -1,5 +1,5 @@
 @extends('admin.layouts.app')
-@section('title', 'Suporte')
+@section('title', 'Chamado ID: {{ $support->id }}')
 
 @section('nav')
     @include('admin.supports.partials.nav')

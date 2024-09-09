@@ -2,12 +2,11 @@
 
 namespace App\Enums;
 
-
 enum SupportStatus: string
 {
-    case Ativo = 'Aberto';
-    case Pendente = 'Pendente';
-    case Fechado = 'Encerrado';
+    case A = "Open";
+    case C = "Closed";
+    case P = "Pendent";
 
     public static function fromValue(string $name): string
     {
@@ -16,6 +15,7 @@ enum SupportStatus: string
                 return $status->value;
             }
         }
+
         throw new \ValueError("$status is not a valid");
     }
 }

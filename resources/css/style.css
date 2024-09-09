@@ -3,7 +3,7 @@
 body {
     font-family: 'Rubik', sans-serif;
     height: 100% !important;
-    background-color: #e9a362 !important;
+    background-color: hsla(0, 9%, 72%, 0.471) !important;
 }
 
 .container-fluid {
@@ -18,6 +18,8 @@ body {
 p {
     font-size: calc(12px + (14 - 12) * ((100vw - 360px) / (1600 - 360))) !important;
     display: fex;
+    font-weight: bold !important;
+    /* Garante que o texto fique em negrito */
 }
 
 h3 {
@@ -31,6 +33,8 @@ h3 {
 
 .color-text {
     color: #757575 !important;
+    font-weight: bold !important;
+    /* Garante que o texto fique em negrito */
 }
 
 
@@ -97,4 +101,45 @@ textarea.form-control {
     /* Ajuste a margem inferior conforme necessário */
     width: 100%;
     /* Garante que o contêiner ocupa a largura total disponível */
+}
+
+.toast-container {
+    position: fixed;
+    top: 1rem;
+    /* Ajuste conforme necessário */
+    right: 1rem;
+    /* Ajuste conforme necessário */
+    z-index: 1050;
+    /* Garante que o toast esteja sobre outros elementos */
+    color: #F8F9FB;
+}
+
+.toast-header i {
+    font-size: 20px;
+    /* Ajuste conforme necessário */
+    color: green;
+    /* Cor do ícone */
+}
+
+.search {
+
+    top: 6px;
+    left: 10px;
+}
+
+.form-control {
+
+    border: none;
+    padding-left: 32px;
+}
+
+.form-control:focus {
+
+    border: none;
+    box-shadow: none;
+}
+
+.green {
+
+    color: green;
 }

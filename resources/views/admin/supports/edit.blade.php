@@ -1,5 +1,5 @@
 @extends('admin.layouts.app')
-@section('title', 'Suporte')
+@section('title', 'Editar Chamado')
 
 @section('nav')
     @include('admin.supports.partials.nav')

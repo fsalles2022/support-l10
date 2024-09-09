@@ -20,7 +20,7 @@ class UpdateSupportDTO
         return new self(
             $request->id,
             $request->subject,
-            SupportStatus::Ativo,
+            SupportStatus::A,
             $request->body,
         );
     }

@@ -39,9 +39,10 @@
                         </ul>
                     </li>
                 </ul>
-                <form class="d-flex mt-3" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-success" type="submit">Search</button>
+                <form action="{{ route('supports.index') }}" method="get" class="d-flex mb-4" role="search">
+                    <input name="filter" value="{{ $filters['filter'] ?? '' }}" class="form-control me-2"
+                        type="text" placeholder="Procurar Chamado" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Pesquisar</button>
                 </form>
             </div>
         </div>
