@@ -47,7 +47,7 @@
                                     </td>
                                     <td class="py-1 px-2">Herman Beck</td>
                                     <td class="py-1 px-2 text-primary">{{ $support->subject }}</td>
-                                    <td class="py-1 px-2 text-success">{{ $support->body }}</td>
+                                    <td class="py-1 px-2 text-success"> {!! $support->body !!}</td>
                                     <td class="py-1 px-2 text-center">
                                         <x-status-support :status="$support->status"></x-status-support>
                                     </td>
@@ -76,5 +76,4 @@
             </div>
         </div>
     </div>
-
 </div>
