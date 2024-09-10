@@ -39,11 +39,23 @@
                         </ul>
                     </li>
                 </ul>
-                <form action="{{ route('supports.index') }}" method="get" class="d-flex mb-4" role="search">
-                    <input name="filter" value="{{ $filters['filter'] ?? '' }}" class="form-control me-2"
-                        type="text" placeholder="Procurar Chamado" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Pesquisar</button>
-                </form>
+                <div class="container my-5">
+                    <!-- Formulário de Pesquisa -->
+                    <form action="{{ route('supports.index') }}" method="get" class="d-flex mb-4" role="search">
+                        <!-- Input de Pesquisa -->
+                        <input name="filter" value="{{ $filters['filter'] ?? '' }}" class="form-control me-2"
+                            type="text" placeholder="Procurar Chamado" aria-label="Search">
+                        <!-- Botão de Pesquisa -->
+                        <button class="btn btn-outline-success" type="submit">Pesquisar</button>
+                    </form>
+
+                    <!-- Botão Cancelar -->
+                    <div class="d-flex">
+                        <a href="{{ route('supports.index') }}" class="btn btn-secondary">Cancelar</a>
+                    </div>
+                </div>
+
+
             </div>
         </div>
     </div>
