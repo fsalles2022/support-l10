@@ -6,7 +6,7 @@
 @endsection
 
 @section('content')
-    @include('admin.supports.partials.create')
+    @include('admin.supports.partials.form_create')
 @endsection
 
 @section('content-footer')
