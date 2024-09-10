@@ -143,3 +143,21 @@ textarea.form-control {
 
     color: green;
 }
+
+/* Ajusta a altura do botão e do input para garantir que tenham a mesma altura */
+.btn,
+.form-control {
+    height: 38px;
+    /* Ajuste conforme necessário */
+    line-height: 38px;
+    /* Alinha verticalmente o texto */
+}
+
+/* Alinha o texto dentro do botão */
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 16px;
+    /* Adiciona um pouco de padding horizontal para o botão */
+}
