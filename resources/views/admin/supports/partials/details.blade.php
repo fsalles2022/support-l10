@@ -1,4 +1,5 @@
-<div class="container">
+<div class="container" style="padding-top:75px"><br>
+
     <div class="card">
         <div class="card-header bg-primary text-white">
             <h4 class="mb-0">Detalhes do Chamado</h4>
@@ -13,7 +14,8 @@
             </ul>
         </div>
         <div class="card-footer text-end"> <!-- Formulário de Exclusão -->
-            <form id="delete-form" action="{{ route('supports.destroy', $support->id) }}" method="POST" class="d-inline">
+            <form id="delete-form" action="{{ route('supports.destroy', $support->id) }}" method="POST"
+                class="d-inline">
                 @csrf @method('DELETE') <button type="submit" id="delete-btn" class="btn btn-danger">Excluir</button>
             </form> <!-- Botão Voltar --> <a class="btn btn-success ms-3" href="{{ route('supports.index') }}"
                 role="button">Voltar</a> <!-- Formulário de Pesquisa -->

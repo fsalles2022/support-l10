@@ -8,6 +8,7 @@
 @section('content')
     @include('admin.supports.partials.details')
 @endsection
+
 @section('content-footer')
     @include('admin.supports.partials.footer')
 @endsection

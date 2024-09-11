@@ -53,7 +53,7 @@
                                     </td>
                                     <td class="py-1 px-2 text-success">{{ $support->id }}</td>
                                     <td class="py-1 px-2">
-                                        <a href="{{ route('supports.show', $support->id) }}"
+                                        <a href="{{ route('replies.index', $support->id) }}"
                                             class="btn btn-info btn-sm">
                                             <i class="fas fa-eye"></i> Verificar
                                         </a>
