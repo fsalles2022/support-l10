@@ -1,8 +1,8 @@
 <div class="container my-5">
     <!-- Exibe o ID do chamado -->
-    <div class="mx-auto" style="max-width: 600px;">
-        <h3 class="text-center text-white bg-primary p-3 rounded-3 shadow-sm">
-            CHAMADO ID: {{ $support->id }}
+    <div class="mx-auto" style="max-width: 500px;">
+        <h3 class="text-center text-white bg-primary p-2 rounded-3 shadow-sm">
+            EDITAR CHAMADO ID: {{ $support->id }}
         </h3>
 
         <x-alert />
@@ -12,9 +12,9 @@
             @method('PUT')
 
             @csrf
-            <div class="container my-5" style="max-width: 600px;">
+            <div class="container my-4" style="max-width: 600px;">
                 <!-- Assunto -->
-                <div class="mb-4">
+                <div class="mb-2">
                     <label class="form-label" for="subject">Assunto</label>
                     <input type="text" id="subject" class="form-control form-control-lg" name="subject"
                         value="{{ $support->subject ?? old('subject') }}" required />
