@@ -12,17 +12,36 @@
                 </li>
             </ul>
         </div>
-        <div class="card-footer text-end"> <!-- Formulário de Exclusão -->
+        <div class="card-footer text-end">
+            <!-- Formulário de Exclusão -->
             <form id="delete-form" action="{{ route('supports.destroy', $support->id) }}" method="POST" class="d-inline">
-                @csrf @method('DELETE') <button type="submit" id="delete-btn" class="btn btn-danger">Excluir</button>
-            </form> <!-- Botão Voltar --> <a class="btn btn-success ms-3" href="{{ route('supports.index') }}"
-                role="button">Voltar</a> <!-- Formulário de Pesquisa -->
-            <form action="{{ route('supports.index') }}" method="get" class="d-inline ms-3" role="search">
-                <!-- Input de Pesquisa --> <input name="filter" value="{{ $filters['filter'] ?? '' }}"
-                    class="form-control me-2" type="text" placeholder="Procurar Chamado" aria-label="Search">
-                <!-- Botão de Pesquisa --> <button class="btn btn-outline-success" type="submit">Pesquisar</button>
+                @csrf
+                @method('DELETE')
+                <button type="submit" id="delete-btn" class="btn btn-danger">
+                    <i class="fas fa-trash"></i> Excluir
+                </button>
+
+            </form>
+            <a class="btn btn-warning ms-2" href="{{ route('supports.edit', $support->id) }}" role="button"><i
+                    class="fas fa-edit"></i>Editar</a>
+            <!-- Botão Voltar -->
+            <a class="btn btn-success ms-2" href="{{ route('supports.index') }}" role="button">
+                <i class="fas fa-arrow-left"></i> Voltar
+            </a>
+
+
+            <!-- Formulário de Pesquisa -->
+            <form action="{{ route('supports.index') }}" method="get" class="d-inline ms-2 " role="search">
+                <div class="input-group mt-4">
+                    <!-- Input de Pesquisa -->
+                    <input name="filter" value="{{ $filters['filter'] ?? '' }}" class="form-control" type="text"
+                        placeholder="Procurar Chamado" aria-label="Search">
+                    <!-- Botão de Pesquisa -->
+                    <button class="btn btn-outline-success" type="submit">Pesquisar</button>
+                </div>
             </form>
         </div>
+
 
     </div>
 </div>
