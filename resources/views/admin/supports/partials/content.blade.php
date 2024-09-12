@@ -51,7 +51,7 @@
                                     <td class="py-1 px-2 text-center">
                                         <x-status-support :status="$support->status"></x-status-support>
                                     </td>
-                                    <td class="py-1 px-2 text-success">{{ $support->id }}</td>
+                                    <td class="py-1 px-2 text-success text-center">{{ $support->id }}</td>
                                     <td class="py-1 px-2">
                                         <a href="{{ route('supports.show', $support->id) }}"
                                             class="btn btn-info btn-sm">
