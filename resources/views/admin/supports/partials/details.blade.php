@@ -1,7 +1,7 @@
-<div class="container">
+<div class="container mt-2">
     <div class="card">
         <div class="card-header bg-primary text-white">
-            <h4 class="mb-0">Detalhes do Chamado</h4>
+            <h4 class="mb-0">Detalhes do Chamado: {{ $support->id }}</h4>
         </div>
         <div class="card-body">
             <ul class="list-unstyled">
@@ -41,7 +41,5 @@
                 </div>
             </form>
         </div>
-
-
     </div>
 </div>
