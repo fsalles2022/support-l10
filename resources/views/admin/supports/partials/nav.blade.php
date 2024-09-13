@@ -49,11 +49,13 @@
                         <button class="btn btn-outline-success" type="submit">Pesquisar</button>
                     </form>
 
-                    <!-- Botão Cancelar -->
-                    <div class="d-flex">
-                        <a href="{{ route('supports.index') }}" class="btn btn-secondary">Cancelar</a>
+                    <div class="d-flex mb-3">
+                        <a href="{{ route('supports.index') }}" class="btn btn-secondary me-2">Cancelar</a>
+                        <a href="{{ route('dashboard') }}" class="btn btn-secondary">Sair</a>
                     </div>
-                </div>
+
+                </div><!-- Botão Cancelar -->
+
 
 
             </div>
