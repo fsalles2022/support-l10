@@ -28,11 +28,12 @@
                 @else
                     <table class="table table-striped table-hover">
                         <thead class="table-dark">
-                            <tr>
+                            <tr class="text-center">
                                 <th>Foto</th>
                                 <th>Nome</th>
                                 <th>Assunto</th>
                                 <th>Descrição</th>
+                                <th>Data Criação</th>
                                 <th>Status</th>
                                 <th>ID</th>
                                 <th>Ações</th>
@@ -46,8 +47,10 @@
                                             alt="imagem">
                                     </td>
                                     <td class="py-1 px-2">Herman Beck</td>
-                                    <td class="py-1 px-2 text-primary">{{ $support->subject }}</td>
-                                    <td class="py-1 px-2 text-success"> {!! $support->body !!}</td>
+                                    <td class="py-1 px-2 text-primary">{{ strtoupper($support->subject) }}</td>
+                                    <td class="py-1 px-2 text-success"> {!! strtoupper($support->body) !!}</td>
+                                    <td class="py-1 px-2 text-success text-center">
+                                        {{ date('d/m/Y H:i', strtotime($support->created_at)) }}</td>
                                     <td class="py-1 px-2 text-center">
                                         <x-status-support :status="$support->status"></x-status-support>
                                     </td>

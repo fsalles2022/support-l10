@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Carbon\Carbon;
 use App\DTO\Supports\CreateSupportDTO;
 use App\DTO\Supports\UpdateSupportDTO;
 use App\Http\Controllers\Controller;
@@ -37,12 +38,16 @@ class SupportController extends Controller
 
     public function show(string|int $id)
     {
+
+
         if (!$support = $this->supportService->findOne($id)) {
             return back();
         }
+
+        $formattedDate = Carbon::parse($support->created_at)->format('Y-m-d H:i');
         // dd($support->subject);
 
-        return view('admin.supports.show', compact('support'));
+        return view('admin.supports.show', compact('support', 'formattedDate'));
     }
 
     public function create()

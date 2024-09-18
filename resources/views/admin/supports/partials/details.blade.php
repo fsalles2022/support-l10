@@ -8,6 +8,8 @@
                 <li><strong>ID:</strong> {{ $support->id }}</li>
                 <li><strong>Assunto:</strong> {{ $support->subject }}</li>
                 <li><strong>Descrição:</strong> {!! $support->body !!}</li>
+                <li><strong>Inicio:</strong> {{ date('d/m/Y H:i', strtotime($support->created_at)) }}
+                <li>
                 <li><strong>Situação do Chamado:</strong> <span class="text-success">{{ $support->status }}</span>
                 </li>
             </ul>

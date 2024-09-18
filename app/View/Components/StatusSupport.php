@@ -23,8 +23,8 @@ class StatusSupport extends Component
 
         // $this->status = 'P';
         $color = 'danger';
-        $color = $this->status === 'C' ? 'primary' : $color;
-        $color = $this->status === 'P' ? 'white' : $color;
+        $color = $this->status === 'FECHADO' ? 'primary' : $color;
+        $color = $this->status === 'PENDENTE' ? 'white' : $color;
         $textStatus = getStatusSupport($this->status);
 
         return view('components.status-support', compact('textStatus', 'color'));

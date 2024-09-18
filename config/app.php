@@ -65,7 +65,7 @@ return [
     |
     */
 
-    'timezone' => env('America/Sao_Paulo', 'UTC'),
+    'timezone' => env('APP_TIMEZONE', 'UTC'), // Ajuste para utilizar o valor da variável de ambiente
 
     /*
     |--------------------------------------------------------------------------
@@ -78,7 +78,7 @@ return [
     |
     */
 
-    'locale' => env('APP_LOCALE', 'en'),
+    'locale' => env('APP_LOCALE', 'pt-BR'),
 
     'fallback_locale' => env('APP_FALLBACK_LOCALE', 'en'),
 
