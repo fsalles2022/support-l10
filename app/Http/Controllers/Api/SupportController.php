@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Adapters\ApiAdapter;
 use App\DTO\Supports\CreateSupportDTO;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreUpdateSupportRequest;
@@ -30,18 +31,7 @@ class SupportController extends Controller
         );
 
         // dd($supports->items());
-
-        return SupportResource::collection($supports->items())
-            ->additional([
-                'meta' => [
-                    'total' => $supports->total(),
-                    'isFirstPage' => $supports->isFirstPage(),
-                    'isLastPage' => $supports->isLastPage(),
-                    'currentPage' => $supports->currentPage(),
-                    'getNumberNextPage' => $supports->getNumberNextPage(),
-                    'getNumberPreviousPage' => $supports->getNumberPreviousPage(),
-                ]
-            ]);
+        return ApiAdapter::toJson($supports);
     }
 
     /**
