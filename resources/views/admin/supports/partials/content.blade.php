@@ -48,7 +48,7 @@
                                             alt="imagem">
                                     </td>
                                     <td class="mx-2">{{ $support->name ?? 'N/A' }}</td>
-                                    <td class="mx-2 text-primary">{{ strtoupper($support->subject) }}</td>
+                                    <td class="mx-2 text-primary">{!! strtoupper($support->subject) !!}</td>
                                     <td class="mx-2 text-success">{!! strtoupper($support->body) !!}</td>
                                     <td class="mx-2 text-center">
                                         {{ date('d/m/Y H:i', strtotime($support->created_at)) }}</td>
