@@ -1,5 +1,5 @@
 <nav class="navbar navbar-dark bg-dark fixed-top">
-    <div class="container">
+    <div class="container-fluid">
         <a class="navbar-brand" href="{{ route('supports.index') }}">
             <img src="https://www.tradeupgroup.com/wp-content/uploads/2021/12/tradeup-300x93-1.png" alt="TradeUp"
                 width="100" height="40">
